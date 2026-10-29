@@ -1,0 +1,10 @@
+services:
+  bluos-web:
+    build: .
+    image: bluos-web:latest
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      # 操作するプレーヤー（ホスト:ポート）。必須なので .env で指定する
+      BLUOS_HOST: ${BLUOS_HOST:?BLUOS_HOST を .env で指定してください}

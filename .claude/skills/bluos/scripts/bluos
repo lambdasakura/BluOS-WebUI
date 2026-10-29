@@ -1,0 +1,6 @@
+#!/bin/sh
+# このリポジトリの CLI（bin/bluos.js）を呼ぶ。
+# スキルのディレクトリを ~/.claude/skills などへシンボリックリンクしても、実体のあるリポジトリをたどる
+set -e
+here=$(dirname "$(realpath "$0")")
+exec node "$here/../../../../bin/bluos.js" "$@"

@@ -1,0 +1,27 @@
+{
+  "name": "bluos-web",
+  "version": "0.1.0",
+  "description": "Web UI for controlling a BluOS player",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "bluos": "bin/bluos.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test --experimental-test-coverage --test-coverage-include=server.js --test-coverage-include='lib/**' --test-coverage-lines=95 --test-coverage-branches=95 --test-coverage-functions=95 test/",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "fast-xml-parser": "^5.12.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "monocart-coverage-reports": "2.13.2"
+  }
+}
